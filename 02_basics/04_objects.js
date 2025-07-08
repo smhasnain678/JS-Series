@@ -33,29 +33,65 @@ const obj3 = {...obj1, ...obj2}
 // console.log(obj3);
 
 
-const users = [
-    {
-        id: 1,
-        email: "user@hmail.com"
-    },
-    {
-        id: 2,
-        email: "user@hmail.com"
-    },
-    {
-        id: 3,
-        email: "user@hmail.com"
-    },
-    {
-        id: 4,
-        email: "user@hmail.com"
-    },
+// const users = [
+//     {
+//         id: 1,
+//         email: "user@hmail.com"
+//     },
+//     {
+//         id: 2,
+//         email: "user@hmail.com"
+//     },
+//     {
+//         id: 3,
+//         email: "user@hmail.com"
+//     },
+//     {
+//         id: 4,
+//         email: "user@hmail.com"
+//     },
+// ]
+
+// users[1].email
+// console.log(tinderUser)
+
+// console.log(Object.keys(tinderUser))
+// console.log(Object.values(tinderUser))
+// console.log(Object.entries(tinderUser))
+// console.log(tinderUser.hasOwnProperty('isLogged'))
+
+
+
+const course = {
+    coursename: "Blockchain",
+    price: "8999",
+    courseInstructor: "Youtube"
+}
+
+// console.log(course["courseInstructor"])
+
+const {courseInstructor: instructor} = course;
+// console.log(courseInstructor)
+console.log(instructor)
+
+
+// de-structuring
+// const navbar = ({company}) => {
+
+// }
+
+// navbar(company = "Hasnain")
+
+
+// {
+//     "name": "Hasnain",
+//     "coursename": "javascript",
+//     "price": "free"
+// }
+
+
+[
+    {},
+    {},
+    {}
 ]
-
-users[1].email
-console.log(tinderUser)
-
-console.log(Object.keys(tinderUser))
-console.log(Object.values(tinderUser))
-console.log(Object.entries(tinderUser))
-console.log(tinderUser.hasOwnProperty('isLogged'))
