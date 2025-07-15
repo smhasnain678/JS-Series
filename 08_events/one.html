@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML events</title>
+</head>
+
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="100px" id="photoshop"
+                    src="https://images.pexels.com/photos/28055673/pexels-photo-28055673.jpeg" alt="photoshop"></li>
+            <li><img width="100px" id="japan" src="https://images.pexels.com/photos/15563012/pexels-photo-15563012.jpeg"
+                    alt=""></li>
+            <li><img width="100px" id="horse" src="https://images.pexels.com/photos/11794563/pexels-photo-11794563.jpeg"
+                    alt=""></li>
+            <li><img width="100px" id="river" src="https://images.pexels.com/photos/8856701/pexels-photo-8856701.jpeg"
+                    alt=""></li>
+            <li><img width="100px" id="owl" src="https://images.pexels.com/photos/32979521/pexels-photo-32979521.jpeg"
+                    alt=""></li>
+            <li><img width="100px" id="prayer"
+                    src="https://images.pexels.com/photos/32998754/pexels-photo-32998754.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    /* document.getElementById('horse').onclick = function(){
+      alert("horse click")
+     }*/
+
+    // attachEvent
+    // jQuery
+
+    // type, timestamp, defaultPrevent,
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altKey, ctrlKey, shiftKey, keyCode
+
+    /*document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul")
+    }, false)*/
+
+    /*document.getElementById('horse').addEventListener('click', function(e){
+        console.log("horse clicked");
+        // same as defaultPrevent()
+        e.stopPropagation()
+    }, false)*/
+
+    /*document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        console.log("google clicked");
+    }, false)*/
+
+    document.querySelector('#images').addEventListener('click', function (e) {
+        // console.log(e.target.parentNode);
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id)
+            let removeIt = e.target.parentNode
+            removeIt.remove();
+        }
+        // removeIt.parentNode.removeChild(removeIt)
+    }, false)
+
+
+</script>
+
+</html>
