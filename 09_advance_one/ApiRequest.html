@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: #212121; color: white; text-align: center; font-family: Arial;">
+    <h1>GitHub Info</h1>
+    <button onclick="fetchData()" style="padding: 10px 20px; font-size: 16px;">Load Profile</button>
+
+    <div style="margin-top: 20px;">
+        <img id="avatar" src="" alt="Avatar" style="width: 150px; border-radius: 50%; display: none; margin: auto;" />
+        <p id="followers" style="font-size: 18px; margin-top: 10px;"></p>
+    </div>
+</body>
+<script>
+     function fetchData() {
+      const requestUrl = 'https://api.github.com/users/smhasnain678';
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', requestUrl);
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+          const data = JSON.parse(this.responseText);
+
+          // Show avatar image
+          const avatarImg = document.getElementById('avatar');
+          avatarImg.src = data.avatar_url;
+          avatarImg.style.display = 'block';
+
+          // Show followers count
+          document.getElementById('followers').textContent = `Followers: ${data.followers}`;
+        }
+      };
+      xhr.send();
+    }
+    /*const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText);
+            console.log(data);
+            console.log(data.followers)
+            console.log(data.avatar_ur)
+        }
+    }
+    xhr.send()*/
+</script>
+
+</html>
