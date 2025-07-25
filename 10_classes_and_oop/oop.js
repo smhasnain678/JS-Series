@@ -33,3 +33,4 @@ const userOne = new User("Hasnain", 12, true)
 const userTwo = new User("JavaScript", 15, false)
 console.log(userOne.constructor)
 // console.log(userTwo)
+
